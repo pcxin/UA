@@ -33,7 +33,7 @@ public class Sdk_Mi implements SdkBaseFactory {
 	@Override
 	public void pay(int luaFunc, String jsonData) {
 		// TODO Auto-generated method stub
-		
+		UnityPlayer.UnitySendMessage("Main Camera","messgae","javaData");
 	}
 	@Override
 	public void switchAccount(int luaFunc) {
