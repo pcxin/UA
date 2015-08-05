@@ -2,8 +2,7 @@ package com.yychina.channel;
 
 import android.app.Activity;
 import android.content.Context;
-
-import com.unity3d.player.UnityPlayerActivity;
+import android.os.Bundle;
 
 /**
  * sdk 简单工厂类
@@ -11,7 +10,7 @@ import com.unity3d.player.UnityPlayerActivity;
  * @author vic
  *
  */
-public class SdkFactory extends UnityPlayerActivity{
+public class SdkFactory{
 	/**
 	 * 获取sdk实例
 	 *
@@ -42,13 +41,13 @@ public class SdkFactory extends UnityPlayerActivity{
 	 * @param luaFunc
 	 * @throws Exception 
 	 */
-	public static void login(final int luaFunc) {
-		((Activity) C.ActivityCurr.context).runOnUiThread(new Runnable() {
-			@Override
-			public void run() {
-				getSdkInstance().login(luaFunc);
-			}
-		});
+	public static void login() {
+//		((Activity) C.ActivityCurr.context).runOnUiThread(new Runnable() {
+//			@Override
+//			public void run() {
+				getSdkInstance().login();
+//			}
+//		});
 	}
 
 	/**
@@ -89,8 +88,8 @@ public class SdkFactory extends UnityPlayerActivity{
 	 * 初始化main
 	 * @param activity
 	 */
-	public static void mainInit(Activity activity){
-		getSdkInstance().mainInit(activity);
+	public static void mainInit(Context context){
+		getSdkInstance().mainInit(context);
 	}
 
 	public static void resume(){

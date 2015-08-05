@@ -1,11 +1,9 @@
 package com.yychina.channel.allsdk;
 
-import android.app.Activity;
 import android.content.Context;
 import android.media.AudioRecord.OnRecordPositionUpdateListener;
 
-import com.xiaomi.gamecenter.sdk.MiCommplatform;
-import com.xiaomi.gamecenter.sdk.entry.MiAppInfo;
+import com.unity3d.player.UnityPlayer;
 import com.yychina.channel.SdkBaseFactory;
 
 
@@ -28,9 +26,9 @@ public class Sdk_Mi implements SdkBaseFactory {
 		MiCommplatform.Init( context, appInfo );
 	}
 	@Override
-	public void login(int luaFunc) {
+	public void login() {
 		// TODO Auto-generated method stub
-		
+		UnityPlayer.UnitySendMessage("Main Camera","messgae","javaData");
 	}
 	@Override
 	public void logout() {
@@ -40,7 +38,7 @@ public class Sdk_Mi implements SdkBaseFactory {
 	@Override
 	public void pay(int luaFunc, String jsonData) {
 		// TODO Auto-generated method stub
-		
+		UnityPlayer.UnitySendMessage("Main Camera","messgae","javaData");
 	}
 	@Override
 	public void switchAccount(int luaFunc) {
@@ -53,9 +51,9 @@ public class Sdk_Mi implements SdkBaseFactory {
 		
 	}
 	@Override
-	public void mainInit(Activity activity) {
+	public void mainInit(Context context) {
 		// TODO Auto-generated method stub
-		
+		Sdk_Mi.context = context;
 	}
 	@Override
 	public void resume() {
