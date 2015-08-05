@@ -89,6 +89,7 @@ public class SdkFactory{
 	 * @param activity
 	 */
 	public static void mainInit(Context context){
+		C.ActivityCurr.setContext(context);
 		getSdkInstance().mainInit(context);
 	}
 
