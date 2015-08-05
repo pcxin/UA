@@ -3,6 +3,7 @@ package com.yychina.channel.allsdk;
 import android.app.Activity;
 import android.content.Context;
 
+import com.unity3d.player.UnityPlayer;
 import com.yychina.channel.SdkBaseFactory;
 
 
@@ -23,7 +24,7 @@ public class Sdk_Mi implements SdkBaseFactory {
 	@Override
 	public void login(int luaFunc) {
 		// TODO Auto-generated method stub
-		
+		UnityPlayer.UnitySendMessage("Main Camera","messgae","javaData");
 	}
 	@Override
 	public void logout() {
