@@ -11,6 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.unity3d.player.UnityPlayer;
+import com.yychina.channel.SdkFactory;
 
 public class UnityPlayerNativeActivity extends NativeActivity
 {
@@ -33,12 +34,15 @@ public class UnityPlayerNativeActivity extends NativeActivity
 
 		setContentView(mUnityPlayer);
 		mUnityPlayer.requestFocus();
+		
+		SdkFactory.mainInit(this);
 	}
 
 	// Quit Unity
 	@Override protected void onDestroy ()
 	{
 		mUnityPlayer.quit();
+		SdkFactory.distory();
 		super.onDestroy();
 	}
 
@@ -47,6 +51,7 @@ public class UnityPlayerNativeActivity extends NativeActivity
 	{
 		super.onPause();
 		mUnityPlayer.pause();
+		SdkFactory.pause();
 	}
 
 	// Resume Unity
@@ -54,8 +59,15 @@ public class UnityPlayerNativeActivity extends NativeActivity
 	{
 		super.onResume();
 		mUnityPlayer.resume();
+		SdkFactory.resume();
 	}
-
+	
+	@Override
+    protected void onStop() {
+		SdkFactory.stop();
+    	super.onStop();
+    }
+	
 	// This ensures the layout will be correct.
 	@Override public void onConfigurationChanged(Configuration newConfig)
 	{

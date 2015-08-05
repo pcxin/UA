@@ -20,9 +20,9 @@ public interface SdkBaseFactory {
 
 	void mainInit(Activity activity);
 
-	void onResume();
+	void resume();
 
-	void onStop();
+	void stop();
 
-	void onPause();
+	void pause();
 }

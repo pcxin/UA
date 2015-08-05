@@ -3,13 +3,15 @@ package com.yychina.channel;
 import android.app.Activity;
 import android.content.Context;
 
+import com.unity3d.player.UnityPlayerActivity;
+
 /**
  * sdk 简单工厂类
  *
  * @author vic
  *
  */
-public class SdkFactory {
+public class SdkFactory extends UnityPlayerActivity{
 	/**
 	 * 获取sdk实例
 	 *
@@ -91,15 +93,15 @@ public class SdkFactory {
 		getSdkInstance().mainInit(activity);
 	}
 
-	public static void onResume(){
-		getSdkInstance().onResume();
+	public static void resume(){
+		getSdkInstance().resume();
 	}
 
-	public static void onStop(){
-		getSdkInstance().onStop();
+	public static void stop(){
+		getSdkInstance().stop();
 	}
 
-	public static void onPause(){
-		getSdkInstance().onPause();
+	public static void pause(){
+		getSdkInstance().pause();
 	}
 }

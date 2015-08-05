@@ -50,17 +50,17 @@ public class Sdk_Mi implements SdkBaseFactory {
 		
 	}
 	@Override
-	public void onResume() {
+	public void resume() {
 		// TODO Auto-generated method stub
 		
 	}
 	@Override
-	public void onStop() {
+	public void stop() {
 		// TODO Auto-generated method stub
 		
 	}
 	@Override
-	public void onPause() {
+	public void pause() {
 		// TODO Auto-generated method stub
 		
 	}
