@@ -2,7 +2,10 @@ package com.yychina.channel.allsdk;
 
 import android.app.Activity;
 import android.content.Context;
+import android.media.AudioRecord.OnRecordPositionUpdateListener;
 
+import com.xiaomi.gamecenter.sdk.MiCommplatform;
+import com.xiaomi.gamecenter.sdk.entry.MiAppInfo;
 import com.yychina.channel.SdkBaseFactory;
 
 
@@ -18,7 +21,11 @@ public class Sdk_Mi implements SdkBaseFactory {
 	@Override
 	public void init() {
 		// TODO Auto-generated method stub
-		
+		//小米初始化方法
+		MiAppInfo appInfo = new MiAppInfo();
+		appInfo.setAppId("2882303761517368331");
+		appInfo.setAppKey("5371736810331");
+		MiCommplatform.Init( context, appInfo );
 	}
 	@Override
 	public void login(int luaFunc) {
