@@ -12,7 +12,8 @@ public class Sdk_Mi implements SdkBaseFactory {
 	@Override
 	public void setContext(Context context) {
 		// TODO Auto-generated method stub
-		
+		tag = Sdk_Mi.class.getName();
+		Sdk_Mi.context = context;
 	}
 	@Override
 	public void init() {
