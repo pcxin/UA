@@ -3,8 +3,8 @@ package com.yychina.channel;
 import android.content.Context;
 
 public interface SdkBaseFactory {
-	void setContext(Context context);
-
+	void mainInit(Context c);
+	
 	void init();
 
 	void login();
@@ -16,8 +16,6 @@ public interface SdkBaseFactory {
 	void switchAccount(int luaFunc);
 
 	public void destroy();
-
-	void mainInit(Context context);
 
 	void resume();
 

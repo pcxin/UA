@@ -2,7 +2,6 @@ package com.yychina.channel;
 
 import android.app.Activity;
 import android.content.Context;
-import android.os.Bundle;
 
 /**
  * sdk 简单工厂类
@@ -21,7 +20,6 @@ public class SdkFactory{
 		try {
 			String className = SdkFactory.class.getPackage().getName() + ".allsdk." + C.Channel.getChannelSdkClassName();
 			baseSdkFactory = (SdkBaseFactory) Class.forName(className).newInstance();// 利用反射得到sdk实例
-			baseSdkFactory.setContext(C.ActivityCurr.context);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -31,8 +29,7 @@ public class SdkFactory{
 	/**
 	 * 统一初始化
 	 */
-	public static void init(Context context) {
-		C.ActivityCurr.setContext(context);
+	public static void init() {
 		getSdkInstance().init();
 	}
 
@@ -42,12 +39,12 @@ public class SdkFactory{
 	 * @throws Exception 
 	 */
 	public static void login() {
-//		((Activity) C.ActivityCurr.context).runOnUiThread(new Runnable() {
-//			@Override
-//			public void run() {
+		((Activity) C.ActivityCurr.context).runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
 				getSdkInstance().login();
-//			}
-//		});
+			}
+		});
 	}
 
 	/**
@@ -88,9 +85,9 @@ public class SdkFactory{
 	 * 初始化main
 	 * @param activity
 	 */
-	public static void mainInit(Context context){
-		C.ActivityCurr.setContext(context);
-		getSdkInstance().mainInit(context);
+	public static void mainInit(Context c){
+		C.ActivityCurr.setContext(c);
+		getSdkInstance().mainInit(c);
 	}
 
 	public static void resume(){
