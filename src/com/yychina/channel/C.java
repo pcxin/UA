@@ -49,7 +49,7 @@ public class C {
 		public static final String[] c_mi = { "000111", Sdk_Mi.class.getSimpleName() };
 
 		private static String[] channelInfo() {
-			return c_baidu;
+			return c_mi;
 		}
 	}
 }

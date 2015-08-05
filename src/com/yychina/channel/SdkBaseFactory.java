@@ -1,6 +1,5 @@
 package com.yychina.channel;
 
-import android.app.Activity;
 import android.content.Context;
 
 public interface SdkBaseFactory {
@@ -8,7 +7,7 @@ public interface SdkBaseFactory {
 
 	void init();
 
-	void login(int luaFunc);
+	void login();
 
 	void logout();
 
@@ -18,7 +17,7 @@ public interface SdkBaseFactory {
 
 	public void destroy();
 
-	void mainInit(Activity activity);
+	void mainInit(Context context);
 
 	void resume();
 
