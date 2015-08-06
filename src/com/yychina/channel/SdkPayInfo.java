@@ -10,9 +10,9 @@ public class SdkPayInfo implements Serializable{
 	/** serialVersionUID */
 	private static final long serialVersionUID = -7508280930197401474L;
 	
-
 	public String order_id; //订单号
 	public String token;  //token
+	public String userId; // 渠道平台用户id
 	public String money;  //单价
 	public String rmb;    //配好商品编码的总价（方式二）
 	public String rate;   //兑换比率
