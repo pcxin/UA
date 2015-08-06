@@ -17,10 +17,10 @@ public class SdkPayInfo implements Serializable{
 	public String productName;
 	public String productId; 
 	public String notify_uri; // 回调Url 有的平台是传这个告知服务器的
-	public String majorName;// 区服角色名称 
 	public String userId; // 平台id
 	public String appUserId; // 游戏id
 	public String majorId; // 区服id
+	public String majorName;// 区服角色名称 
 	public String app_ext;  // 保留字段 如果客户端传值，支付成功之后 会原样返回
 
 	public SdkPayInfo converInfo(String data){
