@@ -30,7 +30,12 @@ public class SdkFactory{
 	 * 统一初始化
 	 */
 	public static void init() {
+		((Activity) C.ActivityCurr.context).runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
 		getSdkInstance().init();
+			}
+		});
 	}
 
 	/**

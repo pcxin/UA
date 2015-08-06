@@ -22,6 +22,7 @@ import com.xiaomi.gamecenter.sdk.OnPayProcessListener;
 import com.xiaomi.gamecenter.sdk.entry.MiAccountInfo;
 import com.xiaomi.gamecenter.sdk.entry.MiAppInfo;
 import com.xiaomi.gamecenter.sdk.entry.MiBuyInfo;
+import com.yychina.channel.C;
 import com.yychina.channel.SdkBaseFactory;
 import com.yychina.channel.SdkPayInfo;
 
@@ -51,8 +52,7 @@ public class Sdk_Mi implements SdkBaseFactory {
 
 	@Override
 	public void init() {
-		// TODO Auto-generated method stub
-
+		UnityPlayer.UnitySendMessage(C.UnityMethod.controller,C.UnityMethod.init,"");
 	}
 
 	@Override
@@ -110,7 +110,7 @@ public class Sdk_Mi implements SdkBaseFactory {
 							handler.sendEmptyMessage(70000);
 						}
 						String jsonResult = dataJsonObj.toString();
-						UnityPlayer.UnitySendMessage("Main Camera","messgae",jsonResult);
+						UnityPlayer.UnitySendMessage(C.UnityMethod.controller,C.UnityMethod.login,jsonResult);
 					}
 				});
 
@@ -256,13 +256,11 @@ public class Sdk_Mi implements SdkBaseFactory {
 			
 			
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		// TODO Auto-generated method stub
 		String jsonResult = dataJsonObj.toString();
-		UnityPlayer.UnitySendMessage("Main Camera","messgae",jsonResult);
+		UnityPlayer.UnitySendMessage(C.UnityMethod.controller,C.UnityMethod.login,jsonResult);
 	}
 
 	@Override

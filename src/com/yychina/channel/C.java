@@ -52,4 +52,17 @@ public class C {
 			return c_mi;
 		}
 	}
+	
+	public static final class UnityMethod {
+		/** 总回调控制类 */
+		public static final String controller = "SDKController";
+		/** test */
+		public static final String message = "messgae";
+
+		/** 无参 */public static final String init = "InitCallBack";
+		public static final String login = "LoginCallBack";
+		public static final String logout = "LogoutCallBack";
+		public static final String pay = "PayCallBack";
+		public static final String switchUser = "SwitchCallBack";
+	}
 }
