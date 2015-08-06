@@ -20,10 +20,15 @@ public class SdkPayInfo implements Serializable{
 	public String count;//商品数量
 	public String productId; //商品编码（方式二）
 	public String notify_uri; // 回调Url 有的平台是传这个告知服务器的
-	public String roleName;// 区服角色名称 
+	public String roleName;// 角色名称 
 	public String roleId;//角色ID
+	public String roleLevel;//角色等级
+	public String roleVIPClass;//角色VIP等级
+	public String userBalance;//用户余额
+	public String rolePartyName;//角色公会名
 	public String channelId; // 渠道平台id
 	public String serverId; // 区服id
+	public String serverName;//区服名称
 	public String app_ext;  // 保留字段 如果客户端传值，支付成功之后 会原样返回
 
 	public SdkPayInfo converInfo(String data){
