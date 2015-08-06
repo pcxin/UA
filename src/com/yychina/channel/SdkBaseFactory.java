@@ -11,7 +11,7 @@ public interface SdkBaseFactory {
 
 	void logout();
 
-	void pay(int luaFunc, String jsonData);
+	void pay(String jsonData);
 
 	void switchAccount(int luaFunc);
 

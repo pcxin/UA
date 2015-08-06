@@ -1,5 +1,7 @@
 package com.yychina.channel.allsdk;
 
+import java.util.UUID;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -64,8 +66,9 @@ public class Sdk_Mi implements SdkBaseFactory {
 									+ "");
 							Log.i("HuangKe----->", "登录成功，token(session_id)是：  "
 									+ token);
-
-							// 向服务器上传token
+							
+							//向服务器上传token
+							
 
 							try {
 								dataJsonObj.put("status", "success");
@@ -90,22 +93,22 @@ public class Sdk_Mi implements SdkBaseFactory {
 						}
 						if (MiErrorCode.MI_XIAOMI_GAMECENTER_ERROR_CANCEL == arg0) {
 							Log.i("HuangKe----->", "取消登录。。。");
-							try {
+							try{
 								dataJsonObj.put("status", "cancel");
 								dataJsonObj.put("user_id", "");
 								dataJsonObj.put("token", "");
-							} catch (Exception e) {
-								// TODO: handle exception
-							}
-
+								}catch (Exception e) {
+									// TODO: handle exception
+								}
+						
 							handler.sendEmptyMessage(70000);
 						}
 						String jsonResult = dataJsonObj.toString();
-						UnityPlayer.UnitySendMessage("Main Camera", "messgae",
-								jsonResult);
+						UnityPlayer.UnitySendMessage("Main Camera","messgae",jsonResult);
 					}
 				});
 
+		
 	}
 
 	private Handler handler = new Handler() {
@@ -132,7 +135,8 @@ public class Sdk_Mi implements SdkBaseFactory {
 				Toast.makeText(context, "登录失败", Toast.LENGTH_SHORT).show();
 				break;
 			case 70000:
-				Toast.makeText(context, "取消登录", Toast.LENGTH_SHORT).show();
+				Toast.makeText(context, "取消登录", Toast.LENGTH_SHORT)
+						.show();
 				break;
 			default:
 				break;
@@ -147,11 +151,37 @@ public class Sdk_Mi implements SdkBaseFactory {
 	}
 
 	@Override
-	public void pay(int luaFunc, String jsonData) {
-
-		SdkPayInfo sdkPayInfo = new SdkPayInfo();
-		sdkPayInfo = sdkPayInfo.converInfo(jsonData);
-
+	public void pay(String jsonData) {
+		try {
+			JSONObject json = new JSONObject(jsonData);
+			json.put("order_id", UUID.randomUUID().toString());
+			json.put("token", accountInfo.getSessionId());
+			json.put("money", "0.01");
+			json.put("rmb", "0.01");
+			json.put("rate", "0.01");
+			json.put("productName", "充值1");
+			json.put("count", "1");
+			json.put("productId", "cc1");
+			json.put("notify_uri", "http://www.ddd.com");
+			json.put("roleName", "小诗子");
+			json.put("roleId", "1212382");
+			json.put("roleLevel", "12");
+			json.put("roleVIPLevel", "1");
+			json.put("rolePartyName", "说的");
+			json.put("channelId", accountInfo.getUid());
+			json.put("serverId", "sdssdss237283sdj");
+			json.put("serverName", "都是");
+			json.put("app_ext", "dsds");
+			
+			SdkPayInfo i = new SdkPayInfo().converInfo(json.toString());
+			
+			
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		// TODO Auto-generated method stub
 		UnityPlayer.UnitySendMessage("Main Camera", "messgae", "javaData");
 	}

@@ -52,11 +52,11 @@ public class SdkFactory{
 	 * @param luaFunc
 	 * @throws Exception 
 	 */
-	public static void pay(final int luaFunc, final String jsonData) throws Exception {
+	public static void pay(final String jsonData) throws Exception {
 		((Activity) C.ActivityCurr.context).runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
-				getSdkInstance().pay(luaFunc, jsonData);
+				getSdkInstance().pay(jsonData);
 			}
 		});
 	}

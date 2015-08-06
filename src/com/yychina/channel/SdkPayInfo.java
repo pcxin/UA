@@ -23,7 +23,7 @@ public class SdkPayInfo implements Serializable{
 	public String roleName;// 角色名称 
 	public String roleId;//角色ID
 	public String roleLevel;//角色等级
-	public String roleVIPClass;//角色VIP等级
+	public String roleVIPLevel;//角色VIP等级
 	public String userBalance;//用户余额
 	public String rolePartyName;//角色公会名
 	public String channelId; // 渠道平台id
