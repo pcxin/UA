@@ -70,13 +70,21 @@ public class SdkFactory{
 	 * 统一切换账号
 	 * @param luaFunc
 	 */
-	public static void switchAccount(final int luaFunc){
+	public static void switchAccount(){
 		((Activity) C.ActivityCurr.context).runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
-				getSdkInstance().switchAccount(luaFunc);
+				getSdkInstance().switchAccount();
 			}
 		});
+	}
+	
+	/**
+	 * 平台id 标识
+	 * @return
+	 */
+	public static String getChannelId(){
+		return getSdkInstance().getChannelId();
 	}
 
 	/**

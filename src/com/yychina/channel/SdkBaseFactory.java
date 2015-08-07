@@ -13,7 +13,9 @@ public interface SdkBaseFactory {
 
 	void pay(String jsonData);
 
-	void switchAccount(int luaFunc);
+	void switchAccount();
+	
+	String getChannelId();
 
 	public void destroy();
 

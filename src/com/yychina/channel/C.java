@@ -46,7 +46,7 @@ public class C {
 
 		public static final String[] c_baidu = { "110000", "Sdk_Baidu" };
 		public static final String[] c_qh360 = { "000023", "Sdk_QiHu360" };
-		public static final String[] c_mi = { "000111", Sdk_Mi.class.getSimpleName() };
+		public static final String[] c_mi = { "3", Sdk_Mi.class.getSimpleName() };
 
 		private static String[] channelInfo() {
 			return c_mi;

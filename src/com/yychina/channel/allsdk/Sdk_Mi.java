@@ -110,6 +110,7 @@ public class Sdk_Mi implements SdkBaseFactory {
 							handler.sendEmptyMessage(70000);
 						}
 						String jsonResult = dataJsonObj.toString();
+						Log.i(tag, jsonResult.toString());
 						UnityPlayer.UnitySendMessage(C.UnityMethod.controller,C.UnityMethod.login,jsonResult);
 					}
 				});
@@ -264,7 +265,7 @@ public class Sdk_Mi implements SdkBaseFactory {
 	}
 
 	@Override
-	public void switchAccount(int luaFunc) {
+	public void switchAccount() {
 		// TODO Auto-generated method stub
 
 	}
@@ -291,6 +292,11 @@ public class Sdk_Mi implements SdkBaseFactory {
 	public void pause() {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public String getChannelId() {
+		return C.Channel.getChannel();
 	}
 
 }
